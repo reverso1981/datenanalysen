@@ -80,6 +80,7 @@ assumptions = [
     ("g_hs", "Ø Besucher pro Tag Hauptsaison", 140, 180, 215, "Besucher", "Annahme; ~1,5 Belegungswechsel bei 120 Gleichzeitig-Plätzen", True),
     ("g_ns", "Ø Besucher pro Tag Nebensaison", 50, 70, 90, "Besucher", "Annahme; Sommer schwach, Seezugang + Strandbad-Kombi als Treiber", True),
     ("kap", "Max. Besucher pro Tag (Spitzentag)", None, 300, None, "Besucher", "120 gleichzeitig × ~2,5 Wechsel", False),
+    ("oeff_verl", "Besuchsverlust durch gestaffelte Öffnung (Mo–Do erst ab 14 Uhr)", 0.05, 0.03, 0.02, "%", "Annahme; Vormittage unter der Woche schwach frequentiert", False),
     ("§", "Preise (brutto, inkl. USt)"),
     ("p_tag", "Tageskarte", 36, 39, 42, "€", "Zielband 35–42 € lt. Grilling (gehobene Mitte)", True),
     ("p_3h", "3-Stunden-Karte", 23, 25, 27, "€", "lt. Grilling ca. 25 €", False),
@@ -87,9 +88,9 @@ assumptions = [
     ("rabatt", "Ø Rabatt (Abos, Einheimischentarif, Hotelkontingente)", 0.15, 0.12, 0.10, "%", "Annahme; Einheimischentarif als Auflage der Gemeinden", False),
     ("ust_e", "USt-Satz Eintritt", None, 0.13, None, "%", "Annahme ermäßigter Satz für Bäder/Saunen – steuerlich prüfen", False),
     ("§", "Gastronomie & Zusatzerlöse"),
-    ("g_kopf", "Gastro-Umsatz pro Besucher (brutto)", 11, 12.5, 14, "€", "Branchenüblich 8–15 € (Bistro, kleine Karte)", True),
+    ("g_kopf", "Gastro-Umsatz pro Besucher (brutto)", 7.5, 9, 10.5, "€", "Smart-Fridge mit Fertigprodukten (z. B. matty) + Kaffee-/Getränkeautomat; Bistro mit Service wäre 11–14 €", True),
     ("ust_g", "Ø USt-Satz Gastro (Mix 10 %/20 %)", None, 0.15, None, "%", "Speisen 10 %, Getränke 20 %", False),
-    ("we_g", "Wareneinsatzquote Gastro", None, 0.32, None, "%", "Branchenwert Bistro 28–35 %", False),
+    ("we_g", "Wareneinsatzquote Gastro", None, 0.45, None, "%", "Fertigprodukte inkl. Automaten-/Systemgebühr; Bistro mit Küche wäre 28–35 %", False),
     ("kiosk", "Strandbad-Kiosk Sommer (Umsatz netto)", 45000, 60000, 75000, "€/Jahr", "Annahme; Betreiber übernimmt Kiosk Mai–Sep", False),
     ("we_k", "Wareneinsatzquote Kiosk", None, 0.40, None, "%", "Annahme", False),
     ("m_anz", "Massagebehandlungen pro Jahr (2 Räume)", 3000, 4000, 5000, "Stück", "Annahme; freie Masseur:innen", False),
@@ -99,7 +100,7 @@ assumptions = [
     ("ev_anz", "Events & Exklusivbuchungen pro Jahr", 25, 40, 55, "Stück", "Vollmond-/Themenaufgüsse, Firmen-Buyouts", False),
     ("ev_erl", "Ø Zusatzerlös je Event (netto)", None, 2500, None, "€", "Annahme", False),
     ("§", "Betriebskosten Betreiber"),
-    ("fte", "Personal (Vollzeitäquivalente)", 21, 20, 20, "VZÄ", "Basis = Blatt Stellenplan; pessimistisch +1 VZÄ", True),
+    ("fte", "Personal (Vollzeitäquivalente)", 8, 7, 7, "VZÄ", "Basis = Blatt Stellenplan; pessimistisch +1 VZÄ", True),
     ("k_fte", "Personalkosten je VZÄ (inkl. Lohnnebenkosten)", None, 52000, None, "€/Jahr", "Ø lt. Blatt Stellenplan (inkl. Zuschläge, Dienstgeberanteil, Aushilfen)", False),
     ("energie", "Energiekosten (Seethermie-WP + PV + Holz)", 220000, 180000, 160000, "€/Jahr", "Annahme; ohne Seethermie/PV eher 300–400 Tsd. €", True),
     ("wasser", "Wasser / Abwasser", None, 40000, None, "€/Jahr", "Annahme", False),
@@ -107,6 +108,10 @@ assumptions = [
     ("mkt", "Marketing (in % vom Umsatz)", None, 0.04, None, "%", "Annahme", False),
     ("wart", "Laufende Wartung Betreiber (in % vom Umsatz)", None, 0.02, None, "%", "Kleinreparaturen; große Instandhaltung = Gemeinde-GmbH", False),
     ("verw", "Verwaltung, Versicherung, IT, Beratung", None, 85000, None, "€/Jahr", "Annahme", False),
+    ("rein_ext", "Reinigung Fremdfirma (nachts)", 100000, 90000, 90000, "€/Jahr", "Annahme: ~6 Mannstunden/Nacht × 365 + Grundreinigung", False),
+    ("aufg_hon", "Event-Aufgüsse freie Saunameister:innen (Honorar)", None, 25000, None, "€/Jahr", "Annahme: Wochenende/Ferien ~200 Aufgüsse × ~120 €", False),
+    ("tech_ext", "Technik-Wartungsvertrag + Fernüberwachung", None, 20000, None, "€/Jahr", "Lüftung, WP, Wasseraufbereitung, Saunaöfen", False),
+    ("it_auto", "Lizenzen Ticketing/Zutritt/Smart-Fridge, Zahlungsgebühren", None, 20000, None, "€/Jahr", "Annahme", False),
     ("§", "Pachtvertrag (Gemeinde-GmbH → Betreiber)"),
     ("p_satz", "Umsatzpacht (in % vom Nettoumsatz)", None, 0.10, None, "%", "Zielband 8–12 % lt. Grilling", True),
     ("p_min", "Mindestpacht", None, 150000, None, "€/Jahr", "Annahme; Absicherung der Gemeinden", False),
@@ -170,7 +175,7 @@ RP["A1"] = "Raumprogramm (Nutzflächen)"
 RP["A1"].font = TITLE
 hdr(RP, 3, ["Bereich", "Nutzfläche (m²)", "Plätze", "Erläuterung"], [44, 16, 10, 70])
 rooms = [
-    ("Eingang, Kassa, Shop-Ecke", 60, None, "Zutrittssystem mit Chip-Armband, Gutscheinverkauf"),
+    ("Eingang, Empfang, Kiosk-Terminals, Drehkreuze", 60, None, "Online-Ticket/QR, RFID-Armband; Empfang nur zu Spitzenzeiten besetzt"),
     ("Garderobe & Umkleiden (Spinde)", 140, 180, "180 Spinde für 120 Gleichzeitig-Gäste + Wechsel"),
     ("Sanitär & Duschen", 100, None, "Getrennte Duschzonen, Saunavorduschen"),
     ("Panorama-Aufgusssauna 90 °C", 55, 35, "Event-Aufgüsse, Glasfront Seeblick"),
@@ -180,8 +185,8 @@ rooms = [
     ("Abkühlbereich innen (Tauchbecken, Kneipp, Schwallduschen)", 70, None, "Tauchbecken ca. 6 m²"),
     ("Ruheraum (Stille)", 200, 50, "50 Liegen à ~4 m², Seeblick"),
     ("Kommunikationsraum (Liegen, Gespräche erlaubt)", 200, 50, "50 Liegen, Kamin, Bibliothek"),
-    ("Bistro (Gastraum + Theke)", 90, 40, "Im Bademantel; Terrasse saisonal zusätzlich"),
-    ("Bistro-Küche (Regenerierküche) & Lager", 50, None, "Kleine Karte, 3–4 warme Gerichte"),
+    ("Bistro-Lounge mit Smart-Fridges & Automaten", 90, 40, "Selbstbedienung, Zahlung per Armband; Terrasse saisonal"),
+    ("Gastro-Lager, Warenannahme, Spüle", 50, None, "Fertigprodukte; Fläche als Reserve für spätere Küche"),
     ("Massage-/Behandlungsräume", 40, 2, "2 Räume à 20 m²"),
     ("Personal, Büro, Sozialräume", 55, None, ""),
     ("Haustechnik, Wäsche, Lager", 150, None, "Wärmepumpe, Lüftung, Wasseraufbereitung"),
@@ -238,15 +243,15 @@ inv = [
         ("Panorama-Aufgusssauna (35 Plätze)", 1, "Stk", 260000, "Inkl. Ofen, Steuerung, Glasfront"),
         ("Bio-Sauna (12 Plätze)", 1, "Stk", 80000, ""),
         ("Dampfbad (10 Plätze)", 1, "Stk", 130000, "Inkl. Dampferzeuger, Fliesen/Mineralwerkstoff"),
-        ("Holzofen-Saunahaus am Steg (15 Plätze)", 1, "Stk", 220000, "Massivholz, holzbefeuert, Funkenschutz"),
+        ("Holzofen-Saunahaus am Steg (15 Plätze)", 1, "Stk", 235000, "Massivholz, Pelletofen mit automatischer Beschickung"),
         ("Tauchbecken innen", 1, "Stk", 80000, ""),
         ("Außen-Whirlpool (ca. 12 Personen)", 1, "Stk", 150000, "Beheizt über Wärmepumpe"),
     ]),
     ("5", "Einrichtung", [
         ("Liegen (Ruhe, Kommunikation, Garten)", 130, "Stk", 900, "Hochwertige Relaxliegen"),
-        ("Gastro-Küche & Theke", 1, "psch", 180000, "Regenerierküche, Kühlung, Kaffeetechnik"),
+        ("Gastro: Smart-Fridges, Automaten, Theke", 1, "psch", 90000, "Smart-Fridges mit Armband-Zahlung, Kaffeevollautomat, Getränkekühlung, Sitzbereich"),
         ("Möblierung, Deko, Leitsystem", 1, "psch", 200000, ""),
-        ("Kassen-/Zutrittssystem, Spinde, IT", 1, "psch", 200000, "Chip-Armband, Online-Ticketing"),
+        ("Kassen-/Zutrittssystem, Spinde, IT", 1, "psch", 260000, "Online-Ticketing, 2 Kiosk-Terminals, Drehkreuze, RFID-Armband, Kameras Steg/Außenbereich"),
     ]),
     ("6", "Außenanlagen", [
         ("Saunagarten, Sichtschutz zum Strandbad, Wege", 1, "psch", 300000, "Textilfrei → Sichtschutz zwingend"),
@@ -371,15 +376,15 @@ U["A1"].font = TITLE
 hdr(U, 3, ["Position", "Einheit", "pessimistisch", "Basis", "optimistisch", "aktiv"], [50, 10, 16, 16, 16, 16])
 U_ROWS = {}
 urows = [
-    ("bes_hs", "Besuche Hauptsaison", "Besuche", lambda c: f"={a('tage_hs', c)}*{a('g_hs', c)}", NUM),
-    ("bes_ns", "Besuche Nebensaison", "Besuche", lambda c: f"={a('tage_ns', c)}*{a('g_ns', c)}", NUM),
+    ("bes_hs", "Besuche Hauptsaison", "Besuche", lambda c: f"={a('tage_hs', c)}*{a('g_hs', c)}*(1-{a('oeff_verl', c)})", NUM),
+    ("bes_ns", "Besuche Nebensaison", "Besuche", lambda c: f"={a('tage_ns', c)}*{a('g_ns', c)}*(1-{a('oeff_verl', c)})", NUM),
     ("bes", "Besuche gesamt", "Besuche", lambda c: f"={c}{{bes_hs}}+{c}{{bes_ns}}", NUM),
     ("ausl", "Auslastung Hauptsaison (Ø / Spitzentag)", "%", lambda c: f"={a('g_hs', c)}/{a('kap', c)}", PCT),
     ("ein_b", "Ø Eintritt je Besuch brutto", "€", lambda c: f"=({a('a_tag', c)}*{a('p_tag', c)}+(1-{a('a_tag', c)})*{a('p_3h', c)})*(1-{a('rabatt', c)})", DEC),
     ("ein_n", "Ø Eintritt je Besuch netto", "€", lambda c: f"={c}{{ein_b}}/(1+{a('ust_e', c)})", DEC),
     (None, "", None, None, None),
     ("u_ein", "Eintrittserlöse", "€", lambda c: f"={c}{{bes}}*{c}{{ein_n}}", EUR),
-    ("u_gas", "Gastronomie (Bistro)", "€", lambda c: f"={c}{{bes}}*{a('g_kopf', c)}/(1+{a('ust_g', c)})", EUR),
+    ("u_gas", "Gastronomie (Smart-Fridge, Automaten)", "€", lambda c: f"={c}{{bes}}*{a('g_kopf', c)}/(1+{a('ust_g', c)})", EUR),
     ("u_kio", "Strandbad-Kiosk (Sommer)", "€", lambda c: f"={a('kiosk', c)}", EUR),
     ("u_mas", "Massage (Provision/Raummiete)", "€", lambda c: f"={a('m_anz', c)}*{a('m_preis', c)}/(1+{a('ust_m', c)})*{a('m_prov', c)}", EUR),
     ("u_evt", "Events & Exklusivbuchungen", "€", lambda c: f"={a('ev_anz', c)}*{a('ev_erl', c)}", EUR),
@@ -429,6 +434,7 @@ brows = [
     ("k_ene", "Energie", "fix", lambda c: f"={a('energie', c)}"),
     ("k_was", "Wasser / Abwasser", "fix", lambda c: f"={a('wasser', c)}"),
     ("k_wae", "Wäsche, Reinigung, Verbrauchsmaterial", "variabel", lambda c: f"={u('bes', c)}*{a('waesche', c)}"),
+    ("k_ext", "Fremdleistungen (Reinigung, Event-Aufgüsse, Technik, Lizenzen)", "fix", lambda c: f"={a('rein_ext', c)}+{a('aufg_hon', c)}+{a('tech_ext', c)}+{a('it_auto', c)}"),
     ("k_mkt", "Marketing", "variabel", lambda c: f"={u('u_sum', c)}*{a('mkt', c)}"),
     ("k_wart", "Laufende Wartung", "variabel", lambda c: f"={u('u_sum', c)}*{a('wart', c)}"),
     ("k_verw", "Verwaltung, Versicherung, IT", "fix", lambda c: f"={a('verw', c)}"),
@@ -441,7 +447,7 @@ brows = [
     ("q_pers", "Personalkostenquote", "%", lambda c: f"={c}{{k_pers}}/{u('u_sum', c)}"),
     ("q_ene", "Energiekostenquote", "%", lambda c: f"={c}{{k_ene}}/{u('u_sum', c)}"),
     ("q_pacht", "Pachtquote", "%", lambda c: f"={c}{{pacht}}/{u('u_sum', c)}"),
-    ("fix", "Fixkosten (Personal, Energie, Wasser, Verwaltung)", "", lambda c: f"={c}{{k_pers}}+{c}{{k_ene}}+{c}{{k_was}}+{c}{{k_verw}}"),
+    ("fix", "Fixkosten (Personal, Fremdleistungen, Energie, Wasser, Verwaltung)", "", lambda c: f"={c}{{k_pers}}+{c}{{k_ext}}+{c}{{k_ene}}+{c}{{k_was}}+{c}{{k_verw}}"),
     ("db", "Deckungsbeitrag je Besuch (nach Umsatzpacht)", "€", lambda c: f"=({u('u_sum', c)}*(1-{a('p_satz', c)})-{c}{{k_weg}}-{c}{{k_wek}}-{c}{{k_wae}}-{c}{{k_mkt}}-{c}{{k_wart}})/{u('bes', c)}"),
     ("be", "Break-even Besuche pro Jahr (Betreiber)", "Besuche", lambda c: f"={c}{{fix}}/{c}{{db}}"),
     ("be_q", "Break-even in % der geplanten Besuche", "%", lambda c: f"={c}{{be}}/{u('bes', c)}"),
@@ -479,69 +485,71 @@ def b(key, c):
 
 # ---------------------------------------------------------------- Stellenplan
 SP = wb.create_sheet("Stellenplan")
-SP["A1"] = "Stellenbesetzungsplan Betreiber (Normaljahr, Gehälter = Annahmen)"
+SP["A1"] = "Stellenbesetzungsplan Betreiber – schlankes Host-Modell (Normaljahr, Gehälter = Annahmen)"
 SP["A1"].font = TITLE
 SP["A2"] = ("Gehälter orientiert am KV Hotel- und Gastgewerbe (Arbeiter/Angestellte) mit marktüblicher Überzahlung im "
             "Salzkammergut – vor Verwendung mit dem aktuell gültigen KV abgleichen.")
 SP["A2"].font = Font(name=F, italic=True, color="C00000")
-SP.merge_cells("A2:J2")
-for col, w in zip("ABCDEFGHIJ", [40, 13, 9, 15, 15, 14, 15, 16, 14, 52]):
+SP.merge_cells("A2:K2")
+for col, w in zip("ABCDEFGHIJK", [44, 13, 9, 15, 15, 14, 15, 16, 12, 14, 60]):
     SP.column_dimensions[col].width = w
 sp_in = [
-    ("Öffnungsstunden pro Tag (10–22 Uhr)", 12, NUM, BLUE, "Annahme"),
-    ("Vor-/Nachbereitung pro Tag (h)", 1, NUM, BLUE, "Aufheizen, Reinigung, Kassenabschluss"),
+    ("Tage mit 12 h Öffnung (10–22 Uhr: Fr–So, Ferien)", 206, NUM, BLUE, "~14 Ferienwochen täglich + übrige Wochen Fr–So"),
+    ("Tage mit 8 h Öffnung (14–22 Uhr: Mo–Do außerhalb Ferien)", "=B7-B4", NUM, BLACK, "Rest der Betriebstage"),
+    ("Vor-/Nachbereitung pro Tag (h)", 1, NUM, BLUE, "Aufheizen, Kontrollgang, Abschluss"),
     ("Betriebstage pro Jahr", f"={a('tage_hs','D')}+{a('tage_ns','D')}", NUM, GREEN, "aus Annahmen"),
-    ("Betriebsstunden pro Jahr", "=(B4+B5)*B6", NUM, BLACK, ""),
+    ("Betriebsstunden pro Jahr (je Position)", "=B4*12+B5*8+B6*B7", NUM, BLACK, ""),
+    ("Mindestbesetzung (Personen, immer)", 2, NUM, BLUE, "Keine Alleinarbeit; beide mit Erste-Hilfe-/Rettungsschein"),
+    ("Zusatzperson Empfang an 12-h-Tagen (h/Tag)", 6, NUM, BLUE, "Hybrid-Kassa: besetzter Empfang ca. 15–21 Uhr"),
+    ("Bedarf Schichtstunden pro Jahr", "=B8*B9+B4*B10", NUM, BLACK, "Präsenzstunden im Haus"),
     ("Wochenarbeitszeit (h)", 40, NUM, BLUE, "KV Hotel- und Gastgewerbe"),
     ("Urlaub (Wochen)", 5, NUM, BLUE, "Urlaubsgesetz"),
     ("Feiertage (Tage)", 13, NUM, BLUE, "gesetzliche Feiertage AT"),
     ("Krankenstand (Tage, Ø)", 10, NUM, BLUE, "Annahme"),
-    ("Netto-Jahresstunden je VZÄ", "=B8*52-B9*B8-(B10+B11)*B8/5", NUM, BLACK, "verfügbare Arbeitszeit"),
-    ("VZÄ je durchgehend besetzter Position", "=B7/B12", DEC, BLACK, "Faustregel: 1 Dauerposition ≈ 2,7 VZÄ"),
+    ("Netto-Jahresstunden je VZÄ", "=B12*52-B13*B12-(B14+B15)*B12/5", NUM, BLACK, "verfügbare Arbeitszeit"),
+    ("VZÄ je durchgehend besetzter Position", "=B8/B16", DEC, BLACK, ""),
     ("Gehälter pro Jahr", 14, NUM, BLUE, "inkl. Urlaubs- und Weihnachtsgeld"),
     ("Zuschläge Sonn-/Feiertag, Abend (in % der Bruttogehälter)", 0.06, PCT, BLUE, "7-Tage-Betrieb; Annahme"),
     ("Dienstgeberanteil (SV, DB, DZ, KommSt, MVK)", 0.29, PCT, BLUE, "Richtwert AT ca. 28–30 %"),
-    ("Aushilfen / Geringfügige (pauschal, inkl. Abgaben)", 30000, EUR, BLUE, "Spitzen: Wochenende, Events, Sommer-Kiosk"),
+    ("Aushilfen / Geringfügige (pauschal, inkl. Abgaben)", 40000, EUR, BLUE, "Ausfälle, Spitzentage, Sommer-Kiosk"),
+    ("Referenz: Personalkosten bisheriges Konzept (20 VZÄ)", 982000, EUR, BLUE, "Bistro mit Küche, Personenkassa, eigene Reinigung, volles Aufgussprogramm"),
 ]
 for i, (lab, v, fmt, fnt, note) in enumerate(sp_in):
     rr = 4 + i
     SP.cell(row=rr, column=1, value=lab).font = BLACK
     put(SP, f"B{rr}", v, fnt, fmt)
-    SP.cell(row=rr, column=10, value=note).font = Font(name=F, size=9, italic=True)
-hdr(SP, 19, ["Funktion", "Bereich", "VZÄ", "Brutto/Monat (€)", "Jahresbrutto (€)", "Zuschläge (€)",
-             "DG-Anteil (€)", "Personalkosten (€)", "Ø Besetzung je Betriebsstunde", "Aufgaben / Einstufung"])
+    SP.cell(row=rr, column=11, value=note).font = Font(name=F, size=9, italic=True)
+hdr(SP, 24, ["Funktion", "Bereich", "VZÄ", "Brutto/Monat (€)", "Jahresbrutto (€)", "Zuschläge (€)",
+             "DG-Anteil (€)", "Personalkosten (€)", "Schichtanteil", "Schichtstunden p. a.", "Aufgaben / Einstufung"])
 jobs = [
-    ("Betriebsleitung", "Leitung", 1.0, 4300, "Gesamtverantwortung, Personal, Budget, Marketing; Tagdienst + Rufbereitschaft"),
-    ("Stv. Leitung / Gästeservice-Leitung", "Leitung", 1.0, 3200, "Dienstplanung, Kassa/Rezeption, Hotelkooperationen, Events"),
-    ("Haustechnik / Bademeister:in", "Technik", 1.0, 3100, "Wärmepumpe, Wasseraufbereitung, Saunaöfen, Holzofen; Bäderhygiene"),
-    ("Saunameister:in – Teamleitung", "Sauna", 1.0, 2850, "Aufgussplan, Event-Aufgüsse, Einschulung"),
-    ("Saunameister:innen", "Sauna", 4.0, 2500, "Aufgüsse, Aufsicht Saunabereich & Steg, Erste Hilfe"),
-    ("Rezeption / Kassa", "Gästeservice", 4.0, 2200, "Check-in, Verkauf, Gutscheine, Telefon/Online"),
-    ("Reinigung", "Service", 3.0, 2050, "Laufende Reinigung Nass-/Ruhebereiche, Wäschelogistik"),
-    ("Koch / Köchin (Regenerierküche)", "Gastro", 2.0, 2450, "Kleine Karte, 3–4 warme Gerichte"),
-    ("Service / Theke Bistro", "Gastro", 3.0, 2150, "Theke, Bademantel-Bistro, im Sommer Kiosk"),
+    ("Betriebsleitung (arbeitet in Schichten mit)", "Leitung", 1.0, 4300, 0.5, "Gesamtverantwortung, Personal, Einkauf, Marketing; ca. 50 % als Host im Dienst"),
+    ("Senior-Host / Stv. Leitung", "Leitung", 1.0, 2950, 1.0, "Dienstplan, Aufgussplan, Hotelkooperationen, Events; vertritt die Leitung"),
+    ("Host:innen Sauna & Aufsicht", "Sauna", 3.0, 2500, 1.0, "4–5 Aufgüsse/Tag, Aufsicht Steg/Becken, Erste Hilfe, Smart-Fridge nachfüllen, Zwischenreinigung"),
+    ("Host:in Empfang & Service", "Gästeservice", 1.0, 2250, 1.0, "Besetzter Empfang zu Spitzenzeiten, Hilfe am Kiosk-Terminal, Gutscheine, Telefon"),
+    ("Haustechnik / Hausmeister:in (geteilt mit Strandbad)", "Technik", 0.3, 3100, 0.0, "Kontrollgänge, Wasserwerte, Kleinreparaturen; Rest über Wartungsvertrag"),
 ]
-j0 = 20
-for i, (fn_, area, vz, br, note) in enumerate(jobs):
+j0 = 25
+for i, (fn_, area, vz, br, share, note) in enumerate(jobs):
     rr = j0 + i
     SP.cell(row=rr, column=1, value=fn_).font = BLACK
     SP.cell(row=rr, column=2, value=area).font = BLACK
     put(SP, f"C{rr}", vz, BLUE, '0.0')
     put(SP, f"D{rr}", br, BLUE, EUR)
-    put(SP, f"E{rr}", f"=C{rr}*D{rr}*$B$14", BLACK, EUR)
-    put(SP, f"F{rr}", f"=E{rr}*$B$15", BLACK, EUR)
-    put(SP, f"G{rr}", f"=(E{rr}+F{rr})*$B$16", BLACK, EUR)
+    put(SP, f"E{rr}", f"=C{rr}*D{rr}*$B$18", BLACK, EUR)
+    put(SP, f"F{rr}", f"=E{rr}*$B$19", BLACK, EUR)
+    put(SP, f"G{rr}", f"=(E{rr}+F{rr})*$B$20", BLACK, EUR)
     put(SP, f"H{rr}", f"=E{rr}+F{rr}+G{rr}", BLACK, EUR)
-    put(SP, f"I{rr}", f"=C{rr}*$B$12/$B$7", BLACK, DEC)
-    SP.cell(row=rr, column=10, value=note).font = Font(name=F, size=9, italic=True)
+    put(SP, f"I{rr}", share, BLUE, PCT)
+    put(SP, f"J{rr}", f"=C{rr}*$B$16*I{rr}", BLACK, NUM)
+    SP.cell(row=rr, column=11, value=note).font = Font(name=F, size=9, italic=True)
 jl = j0 + len(jobs) - 1
 js = jl + 1
 put(SP, f"A{js}", "Summe Stammpersonal", bold=True)
 put(SP, f"C{js}", f"=SUM(C{j0}:C{jl})", BLACK, '0.0', SUMFILL, bold=True)
-for col in "EFGHI":
-    put(SP, f"{col}{js}", f"=SUM({col}{j0}:{col}{jl})", BLACK, DEC if col == "I" else EUR, SUMFILL, bold=True)
+for col in "EFGHJ":
+    put(SP, f"{col}{js}", f"=SUM({col}{j0}:{col}{jl})", BLACK, NUM if col == "J" else EUR, SUMFILL, bold=True)
 put(SP, f"A{js+1}", "Aushilfen / Geringfügige")
-put(SP, f"H{js+1}", "=B17", BLACK, EUR)
+put(SP, f"H{js+1}", "=B21", BLACK, EUR)
 SP_TOT = js + 2
 put(SP, f"A{SP_TOT}", "PERSONALKOSTEN GESAMT", bold=True)
 put(SP, f"H{SP_TOT}", f"=H{js}+H{js+1}", BLACK, EUR, YELLOW, bold=True)
@@ -550,10 +558,20 @@ put(SP, f"A{SP_AVG}", "Ø Personalkosten je VZÄ (→ Annahmen)")
 put(SP, f"H{SP_AVG}", f"=H{SP_TOT}/C{js}", BLACK, EUR)
 put(SP, f"A{SP_AVG+1}", "Personalkosten in % vom Umsatz (aktives Szenario)")
 put(SP, f"H{SP_AVG+1}", f"=H{SP_TOT}/{u('u_sum','F')}", BLACK, PCT)
-SP[f"A{SP_AVG+3}"] = ("Lesart Spalte I: Wie viele Personen dieser Funktion im Schnitt je Betriebsstunde im Haus sind. "
-                      "Summe ≈ 7–8 Personen gleichzeitig; Leitung/Technik arbeiten überwiegend im Tagdienst.")
-SP[f"A{SP_AVG+3}"].font = Font(name=F, size=9, italic=True)
-SP.freeze_panes = "A20"
+put(SP, f"A{SP_AVG+2}", "Deckung Schichtbedarf (verfügbare / benötigte Stunden)", bold=True)
+put(SP, f"H{SP_AVG+2}", f"=J{js}/B11", BLACK, PCT, bold=True)
+put(SP, f"I{SP_AVG+2}", f'=IF(H{SP_AVG+2}>=1,"OK","UNTERDECKUNG")', BLACK, bold=True)
+put(SP, f"A{SP_AVG+3}", "Einsparung Personal ggü. bisherigem Konzept")
+put(SP, f"H{SP_AVG+3}", f"=B22-H{SP_TOT}", BLACK, EUR)
+put(SP, f"A{SP_AVG+4}", "abzgl. neue Fremdleistungen (Reinigung, Event-Aufgüsse, Technik, Lizenzen)")
+put(SP, f"H{SP_AVG+4}", f"=-{b('k_ext','D')}", GREEN, EUR)
+put(SP, f"A{SP_AVG+5}", "Netto-Einsparung Kostenseite (Basis)", bold=True)
+put(SP, f"H{SP_AVG+5}", f"=H{SP_AVG+3}+H{SP_AVG+4}", BLACK, EUR, SUMFILL, bold=True)
+SP[f"A{SP_AVG+7}"] = ("Host-Prinzip: immer 2 Personen im Haus (keine Alleinarbeit), an 12-h-Tagen nachmittags/abends eine 3. am Empfang. "
+                      "Zutritt über Online-Ticket, Kiosk und Drehkreuz; Gastro als Smart-Fridge; Grundreinigung nachts durch Fremdfirma; "
+                      "Massage über freie Masseur:innen (Provision).")
+SP[f"A{SP_AVG+7}"].font = Font(name=F, size=9, italic=True)
+SP.freeze_panes = "A25"
 # Annahmen auf Stellenplan verlinken
 rf, rk = R["fte"], R["k_fte"]
 put(A, f"D{rf}", f"=Stellenplan!C{js}", GREEN, NUM, YELLOW)
@@ -579,7 +597,7 @@ grows = [
     ("bes", "Besuche", lambda j, c: f"={u('bes','F')}*{c}{{hl}}", NUM),
     ("ums", "Umsatz netto", lambda j, c: f"={u('u_sum','F')}*{c}{{hl}}*{c}{{pi}}", EUR),
     ("var", "Variable Kosten (Wareneinsatz, Wäsche, Mkt, Wartung)", lambda j, c: f"=({b('k_weg','F')}+{b('k_wek','F')}+{b('k_wae','F')}+{b('k_mkt','F')}+{b('k_wart','F')})*{c}{{hl}}*{c}{{ki}}", EUR),
-    ("fix", "Fixkosten (Personal, Energie, Wasser, Verwaltung)", lambda j, c: f"={b('fix','F')}*{c}{{ki}}", EUR),
+    ("fix", "Fixkosten (Personal, Fremdleistungen, Energie, Wasser, Verwaltung)", lambda j, c: f"={b('fix','F')}*{c}{{ki}}", EUR),
     ("ebr", "Ergebnis vor Pacht", lambda j, c: f"={c}{{ums}}-{c}{{var}}-{c}{{fix}}", EUR),
     ("pac", "Pacht", lambda j, c: f"=MAX({a('p_min','F')}*{c}{{ki}},{a('p_satz','F')}*{c}{{ums}})", EUR),
     ("ebd", "Betreiberergebnis (EBITDA)", lambda j, c: f"={c}{{ebr}}-{c}{{pac}}", EUR),
