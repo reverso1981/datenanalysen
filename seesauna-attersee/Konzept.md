@@ -13,13 +13,13 @@
 | **Von Gemeinden + TVB zu tragen** | **≈ 8,6 Mio. €** |
 | Besuche im Normaljahr | ≈ 47.000 (pessimistisch 36.000, optimistisch 57.000) |
 | Umsatz Betreiber (netto) | ≈ 1,9 Mio. € |
-| Break-even Betreiber (inkl. 10 % Pacht) | ≈ 47.500 Besuche |
+| Break-even Betreiber (inkl. 10 % Pacht) | ≈ 45.500 Besuche |
 | Pacht an Gemeinde-GmbH | ≈ 190.000 €/Jahr (Mindestpacht 150.000 €) |
 | Rückfluss an Gemeinden nach Rücklage | ≈ 115.000 €/Jahr → ≈ 1,2 Mio. € in 10 Jahren |
 
 **Kernaussage:** Die Seesauna kann die Investition nicht über die Pacht refinanzieren und soll das auch nicht. Sie ist Tourismus- und Freizeitinfrastruktur wie ein Hallenbad. Die Pacht deckt Instandhaltung und Verwaltung und bringt einen Teil der Investition zurück (rund 14 % in 10 Jahren).
 
-**Wichtigster Befund:** Im Basisszenario arbeitet der Betreiber mit 10 % Pacht nur auf Break-even-Niveau. Ein privater Betreiber unterschreibt das nicht. Das Projekt braucht deshalb eine der folgenden Lösungen, siehe Abschnitt 7:
+**Wichtigster Befund:** Im Basisszenario bleibt dem Betreiber mit 10 % Pacht nur eine Marge von rund 2 % (≈ 46 Tsd. €). Darauf lässt sich ein privater Betreiber kaum ein. Das Projekt braucht deshalb eine der folgenden Lösungen, siehe Abschnitt 7:
 - mindestens 55.000 Besuche, oder
 - eine niedrigere bzw. gestaffelte Pacht, oder
 - schlankeres Personal (Self-Service-Elemente).
@@ -148,19 +148,19 @@ Schlüssel:
 | Ø Besucher/Tag Hauptsaison (Okt–Apr) | 140 | **180** | 215 |
 | Besuche/Jahr | 36.000 | **47.100** | 57.200 |
 | Umsatz netto | 1,32 Mio. € | **1,93 Mio. €** | 2,59 Mio. € |
-| Betriebskosten vor Pacht | 1,72 Mio. € | **1,75 Mio. €** | 1,86 Mio. € |
+| Betriebskosten vor Pacht | 1,66 Mio. € | **1,70 Mio. €** | 1,80 Mio. € |
 | Pacht | 0,15 Mio. € | **0,19 Mio. €** | 0,26 Mio. € |
-| **Betreiber-EBITDA** | −0,56 Mio. € | **≈ 0** | +0,47 Mio. € |
-| Tragbarer Pachtsatz (8 % Betreibermarge) | 0 % | **1,4 %** | 20 % |
+| **Betreiber-EBITDA** | −0,50 Mio. € | **+0,05 Mio. €** | +0,53 Mio. € |
+| Tragbarer Pachtsatz (8 % Betreibermarge) | 0 % | **4,4 %** | 22 % |
 
 Umsatzmix im Basisszenario: 62 % Eintritt (Ø 28,80 € brutto nach Rabatten), 26 % Bistro (12,50 € pro Kopf), dazu Kiosk, Massage und Events.
 
 Kostentreiber:
-- Personal mit 20 VZÄ ≈ 1,04 Mio. € (54 % vom Umsatz).
+- Personal mit 20 VZÄ ≈ 0,98 Mio. € (51 % vom Umsatz), siehe Abschnitt 8.
 - Energie ≈ 180 Tsd. € (9 %). Dank Seethermie und PV ist das etwa die Hälfte einer konventionellen Lösung.
 
 ### Was das bedeutet
-Die Fixkosten (≈ 1,35 Mio. €) erzwingen eine hohe Frequenz. Ab etwa **47.500 Besuchen** trägt der Betrieb 10 % Pacht, ab etwa **55.000 Besuchen** ist er für einen Betreiber attraktiv. Mögliche Stellschrauben:
+Die Fixkosten (≈ 1,29 Mio. €) erzwingen eine hohe Frequenz. Ab etwa **45.500 Besuchen** trägt der Betrieb 10 % Pacht, ab etwa **55.000 Besuchen** ist er für einen Betreiber attraktiv. Mögliche Stellschrauben:
 1. **Staffelpacht:** In den Jahren 1–3 nur ein reduzierter Mindestbetrag, danach umsatzabhängig mit progressivem Satz über einer Umsatzschwelle.
 2. **Personal schlank planen:** Self-Check-in, Bistro mit Self-Service-Theke und Saunameister-Pool mit Aushilfen. Minus 2 VZÄ bringt rund +100 Tsd. €.
 3. **Frequenz absichern:** Hotelkontingente vertraglich vor Baubeschluss fixieren, Vorverkauf von Jahresabos über die Gemeinden.
@@ -170,7 +170,37 @@ Im Modell lassen sich alle Annahmen im Blatt *Annahmen* ändern (blaue Zellen). 
 
 ---
 
-## 8. Genehmigungen & Risiken
+## 8. Personal & Stellenplan
+
+Grundlage ist ein 7-Tage-Betrieb von 10 bis 22 Uhr plus 1 h Vor- und Nachbereitung, also rund 4.560 Betriebsstunden im Jahr. Ein VZÄ leistet netto etwa 1.700 h (40-h-Woche abzüglich Urlaub, Feiertagen und Krankenstand). **Eine durchgehend besetzte Position braucht daher rund 2,7 VZÄ.** Mit 20 VZÄ sind im Schnitt 7–8 Personen gleichzeitig im Haus.
+
+| Funktion | VZÄ | Brutto/Monat | Personalkosten p. a.* |
+|---|---:|---:|---:|
+| Betriebsleitung | 1,0 | 4.300 € | 82.300 € |
+| Stv. Leitung / Gästeservice-Leitung | 1,0 | 3.200 € | 61.300 € |
+| Haustechnik / Bademeister:in | 1,0 | 3.100 € | 59.300 € |
+| Saunameister:in – Teamleitung | 1,0 | 2.850 € | 54.600 € |
+| Saunameister:innen | 4,0 | 2.500 € | 191.400 € |
+| Rezeption / Kassa | 4,0 | 2.200 € | 168.500 € |
+| Reinigung | 3,0 | 2.050 € | 117.700 € |
+| Koch / Köchin (Regenerierküche) | 2,0 | 2.450 € | 93.800 € |
+| Service / Theke Bistro | 3,0 | 2.150 € | 123.500 € |
+| **Stammpersonal** | **20,0** | | **952.400 €** |
+| Aushilfen / Geringfügige (Spitzen, Events) | | | 30.000 € |
+| **Personalkosten gesamt** | | | **≈ 982.000 €** (Ø 49.100 €/VZÄ) |
+
+\* 14 Gehälter, dazu 6 % Zuschläge (Sonn- und Feiertage, Abend) und 29 % Dienstgeberanteil (SV, DB, DZ, Kommunalsteuer, MVK).
+
+Die Gehälter sind **Annahmen**: KV Hotel- und Gastgewerbe mit marktüblicher Überzahlung im Salzkammergut. Vor Verwendung sind sie mit dem gültigen KV abzugleichen. Der Stellenplan im Blatt *Stellenplan* speist das Rechenmodell direkt.
+
+**Personal sparen ohne Qualitätsverlust:**
+- Self-Check-in mit Chip-Armband: Rezeption 3 statt 4 VZÄ.
+- Bistro-Theke mit Self-Service in schwachen Zeiten.
+- Aufgüsse in der Nebensaison teilweise durch Aushilfen.
+
+---
+
+## 9. Genehmigungen & Risiken
 
 | Thema | Risiko | Maßnahme |
 |---|---|---|
@@ -185,7 +215,7 @@ Im Modell lassen sich alle Annahmen im Blatt *Annahmen* ändern (blaue Zellen). 
 
 ---
 
-## 9. Zeitplan (indikativ)
+## 10. Zeitplan (indikativ)
 
 | Phase | Zeitraum |
 |---|---|
@@ -198,7 +228,7 @@ Im Modell lassen sich alle Annahmen im Blatt *Annahmen* ändern (blaue Zellen). 
 
 ---
 
-## 10. Nächste Schritte
+## 11. Nächste Schritte
 
 1. Ersetzen der Platzhalter: Standortgemeinde und Strandbad festlegen, Einwohner- und Nächtigungsdaten von Statistik Austria einsetzen.
 2. Vorgespräch mit dem Land OÖ zur Förderquote, dem größten Hebel.
